@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int i,j,count,temp,number[25],count1=0,space=20;
+    printf("how many numbers are going to enter\n");
+    scanf("%d",&count);
+    space=space+count*4;
+    count1++;
+    printf("enter the %d integers\n",count);
+      for(i=0;i<count;i++)
+         { 
+           scanf("%d",&number[i]);
+           count1++;
+         }
+         count1++;
+          for(i=0;i<count;i++)
+           {
+              for(j=i+1;j<count;j++)
+              {
+                   if(number[i]>number[j])
+                     {
+                         temp=number[i];
+                         number[i]=number[j];
+                         number[j]=temp;
+                         count1=count1+3;
+                     }
+              }
+              count1++;
+           }
+           count1++;
+          printf("sorted elements:\n");
+  for(i=0;i<count;i++)
+  {
+       printf("%d\n",number[i]);
+       count1++;
+  }
+       count1++;
+   printf ("the time complexity is %d\n",count1);
+  printf ("the space complexity is %d\n",space);
+}
