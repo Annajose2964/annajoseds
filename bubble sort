@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int n,c,d,swap,array[100],count=0,space=2;
+    printf("enter the number\n");
+    scanf("%d",&n);
+    space=space+n*4;
+    count++;
+    printf("enter the %d integers\n",n);
+      for(c=0;c<n;c++)
+         { 
+           scanf("%d",&array[c]);
+           count++;
+         }
+         count++;
+          for(c=0;c<n-1;c++)
+           {
+              for(d=0;d<n-c-1;d++)
+              {
+                   if(array[d]>array[d+1])
+                     {
+                         swap=array[d];
+                         array[d]=array[d+1];
+                         array[d+1]=swap;
+                         count=count+3;
+                     }
+              }
+              count++;
+           }
+           count++;
+          printf("sorted 1st in ascending order is\n");
+  for(c=0;c<n;c++)
+  {
+       printf("%d\n",array[c]);
+       count++;
+  }
+       count++;
+   printf ("the time complexity is %d\n",count);
+  printf ("the space complexity is %d\n",space);
+}
